@@ -17,23 +17,59 @@ namespace calculadora.Controllers
         {
             return numa + numb;
         }
+        //
+        [HttpGet]
+        [Route("Add")]
+        public int Add2( int numa, int numb)
+        {
+            return numa + numb;
+        }
+        //
         [HttpPost]
         [Route("Multiply")]
-        public float Multiply([FromHeader] float numa, [FromHeader] float numb)
+        public int Multiply([FromHeader] int numa, [FromHeader] int numb)
         {
             return numa * numb;
         }
+        //
+        [HttpGet]
+        [Route("Multiply")]
+        public int Multiply2( int numa,  int numb)
+        {
+            return numa * numb;
+        }
+        //
         [HttpPost]
         [Route("Divide")]
-        public float Divide([FromHeader] int numa, [FromHeader] int numb)
+        public int Divide([FromHeader] int numa, [FromHeader] int numb)
         {
+            if (numb == 0)
+                return 0;
             return numa / numb;
         }
+        //
+        [HttpGet]
+        [Route("Divide")]
+        public int Divide2(int numa,int numb)
+        {
+            if (numb == 0)
+                return 0;
+            return numa / numb;
+        }
+        //
         [HttpPost]
         [Route("Subtraction")]
-        public float Subtration([FromHeader] int numa, [FromHeader] int numb)
+        public int Subtration([FromHeader] int numa, [FromHeader] int numb)
         {
             return numa - numb;
         }
+        //
+        [HttpGet]
+        [Route("Subtraction")]
+        public int Subtration2(int numa, int numb)
+        {
+            return numa - numb;
+        }
+        //
     }
 }
